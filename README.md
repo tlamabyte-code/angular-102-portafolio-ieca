@@ -10,7 +10,7 @@ Antes de comenzar, primero completa estas tareas:
 
 > **Fork**. Un **fork** es una copia independiente de un repositorio, en este curso <ins>lo vamos a utilizar para que tengas tu portafolio de evidencias en tu cuenta personal de github y puedas trabajar individualmente los ejercicios</ins>.
 
-1. Visita el [link](https://github.com/tlamabyte-code/angular-portafolio-ieca)
+1. Visita el [link](https://github.com/tlamabyte-code/angular-102-portafolio-ieca)
 2. Presiona el botón `Fork` lo encuentras en la parte superior derecha
 3. Presiona el botón `Create fork` y listo ✅
 
@@ -51,24 +51,24 @@ Me gustan los videojuegos en particular sagas/series como DKC o AoE,
 disfuto de la arqueología mexicana y el visitar sitios de ese tipo en el país.
 ```
 
-### Ejercicios
+# Ejercicios
 
 En esta sección encuentras los atajos de los READMEs de los ejercicios, cada ejercicio tendrá un README con las instrucciones esperadas 😉
 | Módulo  | Link    |
 | ------- | ------- |
-| Git | [README](/1git/README.md) |
-| Fundamentos Web | [README](/2fundamentos-web/README.md) |
+| Git | [README](/1-git/README.md) |
+| Fundamentos Web | [README](/2-fundamentos-web/README.md) |
 
 ## Notas Importantes ‼️
 <h4>Durante el curso cada semana actualiza tu fork con el código <code>master</code> del repositorio oficial</h4>
 
 ### Actualizar tu Fork
 
-Quizá te preguntes __¿Cómo es que puedo actualizar mi `fork` 🤔?__, <ins>durante el curso será necesario ya que el repositorio oficial irá actualizándose con nuevos ejercicios</ins>, cuando digo que el repositorio estará actualizándose me refiero a la rama `master` del [repositorio oficial](https://github.com/tlamabyte-code/angular-portafolio-ieca)
+Quizá te preguntes __¿Cómo es que puedo actualizar mi `fork` 🤔?__, <ins>durante el curso será necesario ya que el repositorio oficial irá actualizándose con nuevos ejercicios</ins>, cuando digo que el repositorio estará actualizándose me refiero a la rama `master` del [repositorio oficial](https://github.com/tlamabyte-code/angular-102-portafolio-ieca)
 
 1. Si es la **primera vez que tienes que actualizar el `fork` tendrás que realizar algunas configuraciones de tu `fork` utilizando la línea de comandos de `git`**, <ins>si ya configuraste tu `upstream` entonces puedes saltar al paso 4</ins>.
 2. Con una `CMD` <sub>(windows)</sub> o `Terminal` <sub>(linux)</sub> dirígete a la ubicación de tu repositorio
-3. Crearemos algo llamado `upstream`, ejecuta `git remote add upstream https://github.com/tlamabyte-code/angular102-portafolio-ieca`
+3. Crearemos algo llamado `upstream`, ejecuta `git remote add upstream https://github.com/tlamabyte-code/angular-102-portafolio-ieca`
 > **Upstream**. Un `upstream` **será una conexión con el repositorio original**, <ins>necesario para que git sepa que origen tomará para realizar las actualizaciones</ins>
 4. Antes de realizar la actualización, ejecuta `git branch` para asegurar que estas ubicado en tu rama de trabajo, es decir, la rama `evidencias`
   - La terminal debería arrojarte `* evidencias`, si no es así solo ejecuta `git checkout evidencias`
