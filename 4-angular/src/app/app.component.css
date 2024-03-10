@@ -1,0 +1,74 @@
+* {
+    color: white;
+}
+
+button,
+input {
+    color: black;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: rgb(228, 221, 221);
+}
+
+h2 {
+    color: rgb(255, 251, 122);
+}
+
+.interpolacion span {
+    font-size: 1.3rem;
+    font-family: monospace;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: thistle;
+    display: block;
+}
+
+.directivas {
+    padding-left: 5%;
+}
+
+.directivas h4 {
+    color: blue;
+    text-align: center;
+    background-color: gainsboro;
+}
+
+.ejercicioPokemons h3 {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.ejercicioPokemons .pokemons {
+    border: 1px dashed red;
+    width: 100%;
+    display: flex;
+}
+
+
+.ejercicioPokemons .pokemons a {
+    color: cyan;
+}
+
+.ejercicioPokemons .pokemons div::before {
+    content: '👾 ';
+}
+
+.ejercicioPokemons .pokemons div {
+    border: 1px dashed green;
+    width: 150px;
+    font-size: 0.85rem;
+}

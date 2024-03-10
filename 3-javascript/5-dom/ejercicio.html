@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>JS & DOM</title>
+</head>
+
+<body>
+    <div style="display: flex">
+        <input type="text" id="inputEncabezado" placeholder="Ingresa el nuevo encabezado"
+        style="width:70%;margin-bottom:10px" />
+    </div>
+    <div style="display: flex">
+        <button id="btnActualizacion" onClick="modificarEncabezado()" style="margin-right: 10px">Establecer Encabezado</button>
+        <button id="btnUndo" disabled>Encabezado Anterior</button>
+    </div>
+    <h1 id="encabezado">...</h1>
+
+    <script>
+
+        /*
+        INSTRUCCIONES:
+        
+        1.  Codifica la función modificarEncabezado del botón "btnActualizacion" 
+            para que tome el valor del input "inputEncabezado" para cambiar el h1 "encabezado"
+
+        2.  Valida que el valor del input no sea vacío, si esta vacío notifica al usuario con alert() de que 
+            el valor no puede ser vacío
+
+        3.  Agrega el evento `click` al botón "btnUndo", intenta codificar una función callback 
+            para que pueda realizar la función de establecer el encabezado a un título anterior
+
+        4.  Habilita el botón "btnUndo" una vez que se hayan establecido al menos 2 títulos
+                *   Puedes usar un contador para saber cuantas veces se han establecido
+                    así podrás saber cuando desbloquear el botón
+        */
+
+        const btnUndo = document.getElementById('btnUndo')
+        const tituloEncabezado = document.getElementById('encabezado')
+        const inputEncabezado = document.getElementById('inputEncabezado')
+
+        function modificarEncabezado() {
+            /* Tu código aquí */
+        }
+    </script>
+</body>
+
+</html>

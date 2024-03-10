@@ -1,0 +1,205 @@
+<div class="container">
+    <h1>
+        Fundamentos Angular
+    </h1>
+
+    <h2># Inteporlación</h2>
+    <div class="interpolacion">
+        {{ title }}
+        {{ 5+10 }}
+        {{ "hola_cadena" }}
+    </div>
+
+    <h2># Binding</h2>
+    <div class="binding">
+        <input type="text" [value]="email" />
+        <button [disabled]="btnDisabled">Enviar</button>
+    </div>
+
+    <h2># Binding Eventos</h2>
+    <div class="eventBinding">
+        <button (click)="mostrarAlerta()">
+            Alerta
+        </button>
+
+        <hr />
+
+        <div class="contadorOvejas">
+            <div class="box">
+                <span> {{ "🐑".repeat(contadorOvejas) }}</span>
+            </div>
+        </div>
+        <button (click)="contarOveja()">
+            💤
+        </button>
+        <span style="float: right; color: cyan; font-size: 1.5rem;">{{ contadorOvejas }}</span>
+    </div>
+
+    <h2># Data Binding</h2>
+
+    <div class="dataBinding">
+        <h3>🟡 ngModel</h3>
+        <span>Nombre: </span>
+        <div>
+            <!-- 
+                    #nameInput="ngModel"
+                -->
+            <!-- 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                 -->
+            <input required type="text" #nameInput="ngModel" [(ngModel)]="persona.nombre" />
+
+            <span class="message" [class.error]="persona.nombre === ''">
+                {{ nameInput.valid ? '✅' : '❌ Ingresa un nombre' }}
+            </span>
+        </div>
+    </div>
+
+    <h2># Directivas</h2>
+    <!-- #region Directivas -->
+        <div class="directivas">
+            <h2>🔵 *ngIf</h2>
+
+            <button *ngIf="nameInput.valid; else elseBlock" (click)="agregarPersona()">
+                Agregar Persona
+            </button>
+
+            <ng-template #elseBlock>
+                <h4>Completa el campo nombre 🤓</h4>
+            </ng-template>
+
+            <!-- v17 -->
+            <!-- @if (nameInput.valid) {
+                    <button>
+                        Agregar Persona
+                    </button>
+                } @else {
+                    <h4>Completa el campo nombre 🤓</h4>
+                } -->
+
+            <hr />
+
+            <h2>🔵 *ngFor</h2>
+            <h4>Lista de Nombres</h4>
+            <ul style="text-align: center;" *ngIf="listaPersonas.length > 0">
+                <!-- v16 -->
+                <li *ngFor="let persona of listaPersonas; index as i;">
+                    <div>
+                        <strong>{{ persona }}</strong>
+                        <!-- EJERCICIO 01 -->
+                        <!-- Agregar funcionalidad para eliminar el nombre de la persona de la lista utilizando el span con ❌ -->
+                        <span> ❌ </span>
+                    </div>
+                </li>
+
+                <!-- v17 -->
+                <!-- @for (persona of listaPersonas; track persona; let i = $index) {
+                        <li>
+                            <div>
+                                <strong>{{ persona }}</strong>
+                            </div>
+                        </li>
+                    } -->
+
+            </ul>
+
+            <h2>🔵 ngClass </h2>
+            <span class="mensaje-error" [ngClass]="{
+                        'valid': nameInput.valid,
+                        'invalid': nameInput.invalid 
+                    }">
+                <code>
+                        Revisa el comportamiento por medio de la consola del navegador
+                    </code>
+            </span>
+
+            <h2>🔵 ngStyles </h2>
+            <div>
+                <input type="color" [(ngModel)]="boxStyles.background" />
+                <input type="number" [(ngModel)]="boxStyles.width" />
+                <input type="number" [(ngModel)]="boxStyles.height" />
+                <br />
+                <textarea [ngStyle]="{
+                            'background-color': boxStyles.background,
+                            'width.px': boxStyles.width,
+                            'height.px': boxStyles.height,
+                        }">
+
+                    </textarea>
+
+            </div>
+        </div>
+    <!-- #endregion Directivas -->
+
+    <h2># Formulario</h2>
+    <div class="formulario">
+        <form (ngSubmit)="handlerRegistro()" #registroForm="ngForm">
+            <div>
+                <label>📧</label>
+                <input 
+                    type="email" 
+                    required 
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    [(ngModel)]="registroInputs.email"
+                    #email="ngModel"
+                >
+            </div>
+            <div>
+                <label>🔐</label>
+                <!-- EJERCICIO 02 -->
+                <!-- Agregar un pattern a password -->
+                <!-- * Para al menos 8 caracteres -->
+                <input 
+                    type="password" 
+                    required 
+                    name="passkey"
+                    [(ngModel)]="registroInputs.passkey"
+                    #passkey="ngModel"
+                >
+            </div>
+
+            <button [disabled]="registroForm.invalid" type="submit">Registrar</button>
+            <!-- EJERCICIO 03 -->
+            <!-- * Habilitar botón para limpiar información -->
+            <button>Limpiar</button>
+        </form>
+    </div>
+
+    <div class="ejercicioPokemons">
+        <h2>🟢 # Ejercicio Pokemons</h2>
+        <h3>📱 Pokedex</h3>
+        <div class="pokemons">
+            <div *ngFor="let miPokemon of pokedex">
+                <a href="{{ miPokemon.url }}" target="_blank">
+                    <span>{{ miPokemon.name }}</span>
+                </a>
+                <!-- EJERCICIO 04 -->
+                <!-- * Agregar la imagen del pokemon por medio del endpoint que se encuentra en miPokemon.url -->
+            </div>
+        </div>
+    </div>
+
+    <h2> 🔵 ngSwitch </h2>
+    <div>
+        <input 
+            type="text" 
+            required 
+            #pokemonNameInput="ngModel" 
+            [(ngModel)]="nuevoPokemon"
+        />
+
+        <div [ngSwitch]="nuevoPokemon">
+            <div *ngFor="let miPokemon of pokedex">
+                <span *ngSwitchCase="miPokemon.name"> Ya tienes ese pokemon ¯\_(ツ)_/¯</span>
+            </div>
+            <span *ngSwitchCase="''">Intenta registrar un nuevo pokemon</span>
+            <span *ngSwitchDefault>¡Si puedes registrar ese pokemon!</span>
+        </div>
+    </div>
+
+    <!-- @switch(val) {
+        @case ()
+    } -->
+
+</div>

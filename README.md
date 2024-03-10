@@ -6,7 +6,7 @@ Si ya tienes tu [fork](#haz-un-fork-del-portafolio-de-evidencias) listo ✅, te 
 
 Antes de comenzar, primero completa estas tareas:
 
-### Haz un `fork` del [portafolio de evidencias](https://github.com/tlamabyte-code/angular-portafolio-ieca)
+### Haz un `fork` del [portafolio de evidencias](https://github.com/tlamabyte-code/angular-102-portafolio-ieca)
 
 > **Fork**. Un **fork** es una copia independiente de un repositorio, en este curso <ins>lo vamos a utilizar para que tengas tu portafolio de evidencias en tu cuenta personal de github y puedas trabajar individualmente los ejercicios</ins>.
 
@@ -56,8 +56,17 @@ disfuto de la arqueología mexicana y el visitar sitios de ese tipo en el país.
 En esta sección encuentras los atajos de los READMEs de los ejercicios, cada ejercicio tendrá un README con las instrucciones esperadas 😉
 | Módulo  | Link    |
 | ------- | ------- |
+<<<<<<< HEAD
 | Git | [README](/1git/README.md) |
 | Fundamentos Web | [README](/2fundamentos-web/README.md) |
+=======
+| Git (Carpeta para Ejemplificar)* | [README](/1-git/README.md) |
+| Fundamentos Web | [README](/2-fundamentos-web/README.md) |
+| Javascript | [README](/3-javascript/README.md) |
+| Angular | [README](/4-angular/README.md) |
+
+La carpeta `📁 1-git` es opcional, no es necesario hacer el ejercicio solo funciona para poder ejemplificar más sobre git
+>>>>>>> 2cb1ac9f4b00b041c58807ad6a7f6ee9e30e6d87
 
 ## Notas Importantes ‼️
 <h4>Durante el curso cada semana actualiza tu fork con el código <code>master</code> del repositorio oficial</h4>
